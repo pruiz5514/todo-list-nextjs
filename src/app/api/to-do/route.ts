@@ -1,12 +1,6 @@
+import { Task } from "@/types/ITask";
 import { NextResponse } from "next/server";
 
-export interface Task {
-  id: number;
-  name: string;
-  date: string;
-  description: string;
-  completed: boolean;
-}
 
 const taskList: Task[] = [
   {

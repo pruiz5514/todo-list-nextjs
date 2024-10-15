@@ -1,0 +1,20 @@
+.tasks-section{
+    width: 100%;
+    min-width: 300px;
+    max-width: 800px;
+    min-height: 200px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 15px;
+    border-radius: 8px;
+    background-color: var(--background-gray);
+}
+
+.tasks-h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+}
