@@ -7,7 +7,7 @@ const Header = () => {
         <nav>
           <ul className="nav-list">
             <li><Link href='/'>Tareas</Link></li>
-            <li><Link href='/'>Agregar tarea</Link></li>
+            <li><Link href='/add-task'>Agregar tarea</Link></li>
           </ul>
         </nav>
     </header>

@@ -15,7 +15,6 @@ const TaskCard:React.FC<CardProps>  = ({task}) => {
   const deleteT = async(id:number)=> {
     try{
         await deleteTask(id);
-        alert('Tarea eliminada exitosamente')
     }catch(e){
         console.log(e);
     }
@@ -24,7 +23,6 @@ const TaskCard:React.FC<CardProps>  = ({task}) => {
   const checkT = async(id:number)=> {
     try{
         await checkTask(id);
-        alert('Tarea completada')
     }catch(e){
         console.log(e);
     }

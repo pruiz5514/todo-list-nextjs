@@ -1,10 +1,23 @@
+'use client'
 import { Task } from '@/types/ITask';
 import './Tasks.css'
 import { getTasks } from '@/services/tasks';
 import TaskCard from '../TaskCard/TaskCard';
+import { useEffect, useState } from 'react';
 
-const Tasks = async() => {
-  const tasks = await getTasks();
+const Tasks = () => {
+  const [tasks, setTasks] = useState<Task[]>([])
+
+  useEffect(()=>{
+    const fetchTasks = async()=> {
+        try{
+            setTasks(await getTasks());
+        }catch (e){
+            console.log(e);
+        }
+    }
+    fetchTasks()
+  },[])
 
   return (
     <section className='tasks-section'>
