@@ -13,3 +13,38 @@ export async function getTasks() {
 
     return data
 }
+
+export async function deleteTask(id:number) {
+    const response = await fetch('http://localhost:3000/api/to-do', {
+        method: 'DELETE',
+        headers: {
+            'Content-type': 'Application/json'
+        },
+        body: JSON.stringify({id:id})
+    })
+
+    if(response.status === 404){
+        alert('La tarea no existe')
+        throw new Error ('La tarea no existe');
+    }
+
+    const data = response.json();
+    return data
+}
+
+export async function checkTask(id:number) {
+    const response = await fetch(`http://localhost:3000/api/to-do?check=${id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-type': 'Application/json'
+        },
+    })
+
+    if(response.status === 404){
+        alert('La tarea no existe')
+        throw new Error ('La tarea no existe');
+    }
+
+    const data = response.json();
+    return data
+}

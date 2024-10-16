@@ -5,7 +5,6 @@ import TaskCard from '../TaskCard/TaskCard';
 
 const Tasks = async() => {
   const tasks = await getTasks();
-   console.log(tasks);
 
   return (
     <section className='tasks-section'>
