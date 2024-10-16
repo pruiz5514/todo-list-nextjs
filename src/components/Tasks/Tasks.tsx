@@ -19,11 +19,16 @@ const Tasks = () => {
     fetchTasks()
   },[])
 
+  const updateTasks = async () => {
+    const updatedTasks = await getTasks();
+    setTasks(updatedTasks);
+  };
+
   return (
     <section className='tasks-section'>
         <h1 className='tasks-h1'>Mis tareas</h1>
         {tasks.map((task: Task) => (
-            <TaskCard key={task.id} task={task}/>
+            <TaskCard key={task.id} task={task} onTaskChange={updateTasks}/>
         ) )}
     </section>
   )

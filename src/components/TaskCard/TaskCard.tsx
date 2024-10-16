@@ -7,14 +7,16 @@ import { checkTask, deleteTask } from '@/services/tasks';
 
 interface CardProps {
     task: Task; 
+    onTaskChange: () => void; // Nueva propiedad
 }
 
-const TaskCard:React.FC<CardProps>  = ({task}) => {
+const TaskCard:React.FC<CardProps>  = ({task, onTaskChange}) => {
   const {id, name, completed} = task ;
 
   const deleteT = async(id:number)=> {
     try{
         await deleteTask(id);
+        onTaskChange();
     }catch(e){
         console.log(e);
     }
@@ -23,6 +25,7 @@ const TaskCard:React.FC<CardProps>  = ({task}) => {
   const checkT = async(id:number)=> {
     try{
         await checkTask(id);
+        onTaskChange();
     }catch(e){
         console.log(e);
     }
